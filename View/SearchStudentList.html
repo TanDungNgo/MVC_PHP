@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Tìm kiếm</title>
+</head>
+
+<body>
+    <div style="margin: 20px 70px;">
+        <h1 align="center">Tìm kiếm <?php echo $_POST['type']; ?>
+            : '<?php echo $_POST['search']; ?>'</h1>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Họ tên</th>
+                    <!-- <th>Thông tin chi tiết</th> -->
+                    <th>Tuổi</th>
+                    <th>Trường</th>
+                </tr>
+            </thead>
+            <!-- <?php
+            for ($i = 0; $i < sizeof($studentList); $i++) {
+                echo '<tr><td>' . $studentList[$i]->id . '</td><td>'  . $studentList[$i]->name .
+                    '</td><td align="center"><a href="?stid=' .  $studentList[$i]->id . '">View</a></td></tr>';
+            }
+            ?> -->
+            <?php
+            for ($i = 0; $i < sizeof($studentList); $i++) {
+                echo '<tr><td>' . $studentList[$i]->id . '</td><td>'  . $studentList[$i]->name . '</td><td>'
+                    . $studentList[$i]->age .'</td><td>' .$studentList[$i]->university .'</td></tr>';
+            }
+            ?>
+        </table>
+        <a href="javascript:history.back()" class="btn btn-primary">Back</a>
+    </div>
+</body>
+
+</html>
